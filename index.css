@@ -71,8 +71,8 @@ height: 50px;
         box-sizing: border-box;
     }
 
-    body {
-        background-color: #ededede6;
+    .modal-title {
+        background-image: linear-gradient(to right, #181818, #000000);
     }
 
     .menu-first {
@@ -678,4 +678,18 @@ height: 50px;
 
     .image-container {
         border-radius: 10px 10px 0 0;
+    }
+
+    .sale-logo {
+        height: 200px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+    }
+
+    .slide h2 {
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
     }

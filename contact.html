@@ -46,19 +46,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="contact.css">
     <title>Document</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
     <div class="contact-container">
         <form action="" class="contact-left">
-            <h2>Contact Us</h2>
-            <hr>
+            <div class="contact-left-title">
+                <h2>Contact Us</h2>
+                <hr>
+            </div>
             <input type="text" name="name" placeholder="Your Name" class="contact-inputs" required>
             <input type="email" name="email" placeholder="Your Email" class="contact-inputs" required>
             <textarea name="message"placeholder="Your Message" class="contact-inputs" required></textarea>
-            <button type="submit"> Submit <img src="asset/arrow_icon.png" alt=""></button>
+            <button type="submit"> Submit <i class='bx bx-right-arrow-alt' id="icon"></i></button>
         </form>
         
-        <div class="contact-right"></div>
+        <div class="contact-right">
+            <img src="images\image-removebg-preview (2).png" alt="">
+        </div>
     </div>
     
 </body>

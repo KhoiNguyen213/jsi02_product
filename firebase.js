@@ -29,12 +29,14 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
-console.log("2222", analytics);
 const db = getFirestore(app);
 const products = collection(db, "products");
 const querySnapshot = await getDocs(products);
+
 querySnapshot.forEach((doc) => {
   let product = doc.data();
+  console.log(product);
+
   document.getElementById("products").innerHTML += `
 <li>
 <div>gia: ${product.gia}</div>

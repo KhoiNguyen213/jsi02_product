@@ -133,3 +133,10 @@ button {
 .signUp-link p a:hover {
     text-decoration: underline;
 }
+
+.fgpw {
+    position: relative;
+    width: 100%;
+    text-decoration: none;
+    font-size: 14px;
+}

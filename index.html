@@ -10,6 +10,11 @@
   <!-- custom css -->
   <link rel="stylesheet" type="text/css" href="index.css">
     <title>Document</title>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" type="text/css"
+    href="https://cdn.rawgit.com/carlsednaoui/ouibounce/master/test/ouibounce.min.css">
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/ouibounce/0.0.11/ouibounce.min.js"></script>
 </head>
 <body>
     <div class="menu-first">
@@ -245,6 +250,30 @@
     <div id="products"></div>
 
   </div>
+  <div id="ouibounce-modal">
+    <div class="underlay"></div>
+    <div class="modal">
+      <div class="modal-title">
+        <h3 class="modal-don" style="color: rgb(255, 255, 255)(119, 10, 10);">Wait</h3>
+      </div>
+      <div class="modal-body">
+        <h3 style="display: flex;justify-content: space-around;color: rgb(61, 61, 61);">You might miss this!!!</h3>
+        <div class="slide">
+          <h2>There are many discounts after this site is completed</h2>
+          <img class="sale-logo" src="images\sale.png" alt="">
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <p onclick="document.getElementById('ouibounce-modal').style.display = 'none';">Skip</p>
+      </div>
+    </div>
+  </div>
+  <script>
+    var _ouibounce = ouibounce(document.getElementById('ouibounce-modal'), {
+      aggressive: true,
+    });
+  </script>
   
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
   <div id="products"></div>
