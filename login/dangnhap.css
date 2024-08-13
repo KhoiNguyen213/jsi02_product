@@ -140,3 +140,13 @@ button {
     text-decoration: none;
     font-size: 14px;
 }
+
+.login-btn {
+    text-decoration: none;
+    color: #000;
+}
+
+.login-btn:hover {
+    text-decoration: underline;
+
+}

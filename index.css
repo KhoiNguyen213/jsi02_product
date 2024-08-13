@@ -71,9 +71,9 @@ height: 50px;
         box-sizing: border-box;
     }
 
-    .modal-title {
+    /* .modal-title {
         background-image: linear-gradient(to right, #181818, #000000);
-    }
+    } */
 
     .menu-first {
         display: flex;
