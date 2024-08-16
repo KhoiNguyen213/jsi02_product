@@ -125,22 +125,22 @@ var swiper = new Swiper(".mySwiper", {
   },
 });
 
-document.getElementById("search").addEventListener("submit", (event) => {
-  let searchInput = document.getElementById("search-input").value.toUpperCase();
-  console.log(searchInput);
-  let card = document.querySelectorAll(".card");
-  let productsName = document.querySelectorAll(".product-name");
-  let prices = document.querySelectorAll("h6");
-  event.preventDefault();
+// document.getElementById("search").addEventListener("submit", (event) => {
+//   let searchInput = document.getElementById("search-input").value.toUpperCase();
+//   console.log(searchInput);
+//   let card = document.querySelectorAll(".card");
+//   let productsName = document.querySelectorAll(".product-name");
+//   let prices = document.querySelectorAll("h6");
+//   event.preventDefault();
 
-  productsName.forEach((items, index) => {
-    if (items.innerText.includes(searchInput)) {
-      card[index].classList.remove("hide");
-    } else {
-      cards[index].classList.add("hide");
-    }
-  });
-});
+//   productsName.forEach((items, index) => {
+//     if (items.innerText.includes(searchInput)) {
+//       card[index].classList.remove("hide");
+//     } else {
+//       cards[index].classList.add("hide");
+//     }
+//   });
+// });
 // import { collection, getDocs } from "firebase/firestore";
 
 // const querySnapshot = await getDocs(collection(db, "products"));
@@ -216,8 +216,20 @@ document.getElementById("search").addEventListener("submit", (event) => {
 });
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
-import { getAuth, createUserWithEmailAndPassword, sendEmailVerification, updateProfile, signInWithEmailAndPassword, signOut } from 'https://www.gstatic.com/firebasejs/10.12.3/firebase-auth.js';
-import { getFirestore, addDoc, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-firestore.js";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  sendEmailVerification,
+  updateProfile,
+  signInWithEmailAndPassword,
+  signOut,
+} from "https://www.gstatic.com/firebasejs/10.12.3/firebase-auth.js";
+import {
+  getFirestore,
+  addDoc,
+  collection,
+  getDocs,
+} from "https://www.gstatic.com/firebasejs/10.12.3/firebase-firestore.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -229,7 +241,7 @@ const firebaseConfig = {
   storageBucket: "banrauxanh-9f4a2.appspot.com",
   messagingSenderId: "257784397255",
   appId: "1:257784397255:web:9e5d8dc0f9bf514fef2de2",
-  measurementId: "G-PBDFBNSS3Q"
+  measurementId: "G-PBDFBNSS3Q",
 };
 
 // Initialize Firebase
