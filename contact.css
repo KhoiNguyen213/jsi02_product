@@ -92,6 +92,8 @@ form .input-box{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
 }
 
 body {
@@ -184,6 +186,7 @@ body {
 }
 
 .menu-first {
+    padding-left: 20px;
     display: flex;
     justify-content: space-evenly;
     background: #ffffff;

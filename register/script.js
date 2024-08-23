@@ -91,22 +91,3 @@ if (btnRegister) {
       });
   });
 }
-const btnLogin = document.getElementById("btnLogin");
-if (btnLogin) {
-  btnLogin.addEventListener("click", function () {
-    signInWithEmailAndPassword(auth, email.value, password.value)
-      .then(async (userCredential) => {
-        const user = userCredential.user;
-        if (!user.emailVerified) {
-          signOut(auth);
-          throw { code: "Email not verified", message: "" };
-        }
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorCode, errorMessage);
-        alert(errorCode);
-      });
-  });
-}

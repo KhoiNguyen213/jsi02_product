@@ -121,7 +121,7 @@ var swiper = new Swiper(".mySwiper", {
   },
   autoplay: {
     delay: 2500,
-    disableOnInteraction: true,
+    disableOnInteraction: false,
   },
 });
 
@@ -198,22 +198,22 @@ var swiper = new Swiper(".mySwiper", {
 //   alert("Đã thêm sản phẩm vào giỏ hàng");
 // }
 
-document.getElementById("search").addEventListener("submit", (event) => {
-  let searchInput = document.getElementById("search-input").value.toUpperCase();
-  console.log(searchInput);
-  let card = document.querySelectorAll(".card");
-  let productsName = document.querySelectorAll(".product-name");
-  let prices = document.querySelectorAll("h6");
-  event.preventDefault();
+// document.getElementById("search").addEventListener("submit", (event) => {
+//   let searchInput = document.getElementById("search-input").value.toUpperCase();
+//   console.log(searchInput);
+//   let card = document.querySelectorAll(".card");
+//   let productsName = document.querySelectorAll(".product-name");
+//   let prices = document.querySelectorAll("h6");
+//   event.preventDefault();
 
-  productsName.forEach((items, index) => {
-    if (items.innerText.includes(searchInput)) {
-      card[index].classList.remove("hide");
-    } else {
-      card[index].classList.add("hide");
-    }
-  });
-});
+//   productsName.forEach((items, index) => {
+//     if (items.innerText.includes(searchInput)) {
+//       card[index].classList.remove("hide");
+//     } else {
+//       card[index].classList.add("hide");
+//     }
+//   });
+// });
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
 import {
@@ -255,8 +255,9 @@ querySnapshot.forEach((doc) => {
   document.getElementById("products").innerHTML += `
    <li class="product-item">
       <div class="product-name">${product.item}</div>
-      <div class="product-price">$${product.price}</div>
+      <div class="product-price">${product.price}</div>
       <img class="product-image" src="${product.image}" alt="${product.name}">
     </li>
   `;
 });
+let product = document.getElementById("product");
