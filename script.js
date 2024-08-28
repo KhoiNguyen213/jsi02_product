@@ -298,17 +298,45 @@ if (btnRegister) {
 //       });
 //   });
 // }
+divElement.forEach((items, index) => {
+  items.addEventListener("click", function () {
+    window.location.href = "trang.html";
+    localStorage.setItem("items", JSON.stringify(products.data[index]));
+  });
+});
+
+function handleClickProduct(product) {
+  window.location.href = "trang.html";
+  localStorage.setItem("items", product);
+  console.log(product);
+}
 const querySnapshot = await getDocs(collection(db, "product"));
 querySnapshot.forEach((doc) => {
   let product = doc.data();
-  console.log(product);
 
   document.getElementById("products").innerHTML += `
    <li class="product-item">
+   <a class="trangcon" href="product.html" onclick="handleClickProduct(product)">
       <div class="product-name">${product.item}</div>
       <div class="product-price">${product.price}</div>
       <img class="product-image" src="${product.image}" alt="${product.name}">
+    </a>
     </li>
   `;
 });
+
 let product = document.getElementById("product");
+// divElement.forEach((item, product) => {
+//   items.addEventListener("click", function () {
+//     window.location.href = "trangc.html";
+//     querySnapshot.setItem("item", JSON.stringify(products.data[product]));
+//   });
+// });
+
+// const q = query(collection(db, "cities"), where("capital", "==", true));
+
+// const queryGetDoc = await getDocs(q);
+// querySnapshot.forEach((doc) => {
+//   // doc.data() is never undefined for query doc snapshots
+//   console.log(doc.id, " => ", doc.data());
+// });
