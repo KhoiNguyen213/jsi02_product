@@ -750,3 +750,34 @@ body>div.footer>div>div.foter-bottom>ol>li>a {
 .trangcon {
   text-decoration: none;
 }
+
+.all {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.pic {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+  width: 600px;
+  height: 500px;
+}
+
+.ten {
+  font-weight: bold;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 48px;
+  /* margin-left: 150px; */
+}
+
+.vnd {
+  font-size: 30px;
+}
+
+.infor {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin-right: 40%;
+}

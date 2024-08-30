@@ -229,6 +229,8 @@ import {
   addDoc,
   collection,
   getDocs,
+  doc,
+  getDoc,
 } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-firestore.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -298,33 +300,53 @@ if (btnRegister) {
 //       });
 //   });
 // }
-divElement.forEach((items, index) => {
-  items.addEventListener("click", function () {
-    window.location.href = "trang.html";
-    localStorage.setItem("items", JSON.stringify(products.data[index]));
-  });
-});
+// divElement.forEach((items, index) => {
+//   items.addEventListener("click", function () {
+//     window.location.href = "trang.html";
+//     localStorage.setItem("items", JSON.stringify(products.data[index]));
+//   });
+// });
 
-function handleClickProduct(product) {
-  window.location.href = "trang.html";
-  localStorage.setItem("items", product);
-  console.log(product);
-}
-const querySnapshot = await getDocs(collection(db, "product"));
-querySnapshot.forEach((doc) => {
-  let product = doc.data();
+// function handleClickProduct(product) {
+//   window.location.href = "trang.html";
+//   localStorage.setItem("items", product);
+//   console.log(product);
+// }
 
-  document.getElementById("products").innerHTML += `
+let currentPath = window.location.pathname;
+if (currentPath.includes("/index.html")) {
+  const querySnapshot = await getDocs(collection(db, "product"));
+  querySnapshot.forEach((doc) => {
+    let product = doc.data();
+
+    document.getElementById("products").innerHTML += `
    <li class="product-item">
-   <a class="trangcon" href="product.html" onclick="handleClickProduct(product)">
+   <a class="trangcon" href="/product.html?id=${doc.id}" onclick="handleClickProduct(product)">
       <div class="product-name">${product.item}</div>
       <div class="product-price">${product.price}</div>
       <img class="product-image" src="${product.image}" alt="${product.name}">
     </a>
     </li>
   `;
-});
-
+  });
+} else if (currentPath.includes("/product.html")) {
+  let href = window.location.href;
+  const productId = href.split("id=")[1];
+  const docRef = doc(db, "product", productId);
+  const docSnap = await getDoc(docRef);
+  const product = docSnap.data();
+  console.log(product);
+  document.getElementById("product").innerHTML += `
+    
+    <div class="all">
+      <img class="pic" src="${product.image}" alt="${product.name}">
+        <div class="infor">
+          <div class="ten">${product.item}</div>
+          <div class="vnd">${product.price}</div>
+        </div>
+    </div>
+  `;
+}
 let product = document.getElementById("product");
 // divElement.forEach((item, product) => {
 //   items.addEventListener("click", function () {
