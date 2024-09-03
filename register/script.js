@@ -29,16 +29,16 @@
 //  signInBtnLink.addEventListener('click',()=>{
 //     wrapper.classList.toggle('active');
 //  })
-function kiemtra() {
-  var u = document.login.u.value;
-  if ((u = false)) {
-    document.getElementById("remember").innerHTML =
-      "you need to sacrified your self";
-    return false;
-  } else {
-    document.getElementById("remember").innerHTML = "you are a good person";
-  }
-}
+// function kiemtra() {
+//   var u = document.login.u.value;
+//   if ((u = false)) {
+//     document.getElementById("remember").innerHTML =
+//       "you need to sacrified your self";
+//     return false;
+//   } else {
+//     document.getElementById("remember").innerHTML = "you are a good person";
+//   }
+// }
 
 // const email = document.addEventListener('email')
 // console.log("email:",email)
@@ -46,3 +46,13 @@ function kiemtra() {
 // console.log("password:",password)
 // const username = document.addEventListener('username')
 // console.log("username:",username)
+// var button = document.getElementById("btnRegister");
+
+// button.addEventListener("click", function () {
+//   document.location.href = "/index.html";
+// });
+const button = document.getElementById("button");
+
+divElement.addEventListener("click", function () {
+  window.location.href = "https://www.example.com";
+});

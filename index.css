@@ -755,12 +755,13 @@ body>div.footer>div>div.foter-bottom>ol>li>a {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
+  margin-left: 120px;
 }
 
 .pic {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
-  width: 600px;
-  height: 500px;
+  width: 500px;
+  height: 300px;
 }
 
 .ten {
