@@ -1,104 +1,3 @@
-// let products = {
-//   data: [
-//     {
-//       name: "Quần Kaki Túi Chéo Kiểu Form Slimfit QK024 Màu Đen",
-//       price: "499.000đ",
-//       image2:
-//         "ảnh/quan-tay-xep-li-theu-form-slimfit-crop-qt055_2_small-18346.jpg",
-//     },
-
-//     {
-//       name: "Quần Kaki Túi Chéo Kiểu Form Slimfit QK024 Màu Nâu",
-//       price: "372.000đ",
-//       image2:
-//         "ảnh/quan-kaki-tui-cheo-kieu-form-slimfit-qk024-mau-nau_2_small-18372.jpg",
-//     },
-
-//     {
-//       name: "Quần Tây Trơn Form Slimfit QT058",
-//       price: "961.000đ",
-//       image2:
-//         "ảnh/quan-kaki-tui-cheo-kieu-form-slimfit-qk024_2_small-18371.jpg",
-//     },
-
-//     {
-//       name: "Áo Sơ Mi In Họa Tiết Form Regular SM144 Màu Đen",
-//       price: "254.000đ",
-//       image2:
-//         "ảnh/ao-so-mi-soc-tay-dai-ra-phoi-form-regular-sm144-mau-do_2_small-18352.jpg",
-//     },
-
-//     {
-//       name: "Áo Sơ Mi In Họa Tiết Form Regular SM144 Màu Đỏ",
-//       price: "399.000đ",
-//       image2:
-//         "ảnh/ao-so-mi-soc-tay-dai-ra-phoi-form-regular-sm144_2_small-18351.jpg",
-//     },
-
-//     {
-//       name: "Áo Sơ Mi Sọc Tay Dài Rã Phối Form Regular SM143 Sọc Xanh",
-//       price: "159.000đ",
-//       image2:
-//         "ảnh/ao-so-mi-soc-tay-dai-ra-phoi-form-regular-sm143-soc-trang_2_small-18349.jpg",
-//     },
-//   ],
-// };
-// for (items of products.data) {
-//   let card = document.createElement("div");
-//   card.classList.add("card");
-
-//   let imgContainer = document.createElement("div");
-//   imgContainer.classList.add("image-container");
-
-//   let image = document.createElement("img");
-//   image.setAttribute("src", items.image2);
-//   image.classList.add("image");
-//   imgContainer.appendChild(image);
-//   card.appendChild(imgContainer);
-
-//   let container = document.createElement("div");
-//   container.classList.add("container");
-
-//   // let  title = document.createElement("h4")
-//   // title.innerHTML = ""
-//   let ten = document.createElement("h6");
-//   ten.classList.add("product-name");
-//   ten.innerText = items.name.toUpperCase();
-//   container.appendChild(ten);
-
-//   // let ten2 = document.createElement("br");
-//   // ten2.classList.add("price");
-//   // ten2.innerText = items.name.toUpperCase();
-//   // ten2.appendChild(ten);
-
-//   card.appendChild(container);
-//   document.getElementById("products").appendChild(card);
-
-//   let price = document.createElement("h5");
-//   price.innerHTML = items.price;
-//   container.appendChild(price);
-
-//   // let hover = document.createElement("a");
-//   // image.setAttribute("href", items.image2)
-//   // hover.classList.add("hover");
-//   // function addToCart() {};
-//   // card.appendChild(hover);
-
-//   let btn = document.createElement("a");
-//   btn.classList.add("btn", "btn-primary");
-//   btn.setAttribute("role", "button");
-//   btn.setAttribute("onclick", "addToCart()");
-//   btn.innerHTML = "Thêm vào giỏ hàng";
-//   container.appendChild(btn);
-// }
-// function addToCart() {
-//   alert("Đã thêm sản phẩm vào giỏ hàng");
-// }
-
-// // function Redirect() {
-// //     window.location="https://viblo.asia.vn";
-// //  }
-
 const divElement = document.querySelectorAll(".card"); // Replace 'div' with the ID or class of your actual div element
 
 const dropdown = document.querySelector(".dropdown");
@@ -257,6 +156,7 @@ const password = document.getElementById("password");
 const username = document.getElementById("username");
 
 const btnRegister = document.getElementById("btnRegister");
+console.log("🚀 ~ btnRegister:", btnRegister)
 
 if (btnRegister) {
   btnRegister.addEventListener("click", () => {
@@ -306,12 +206,6 @@ if (btnRegister) {
 //     localStorage.setItem("items", JSON.stringify(products.data[index]));
 //   });
 // });
-
-// function handleClickProduct(product) {
-//   window.location.href = "trang.html";
-//   localStorage.setItem("items", product);
-//   console.log(product);
-// }
 
 let currentPath = window.location.pathname;
 if (currentPath.includes("/index.html")) {

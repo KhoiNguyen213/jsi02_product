@@ -1,58 +1,65 @@
-// document
-//     .getElementById("register-form")
-//     .addEventListener("submit", function (event) {
-//         event.preventDefault(); // Prevent default form submission
-//         // Get form data
-//         const formData = new FormData(event.target);
-//         const registrationData = {};
-//         formData.forEach((value, key) => {
-//             registrationData[key] = value;
-//         });
-//         // Retrieve existing users from localStorage or initialize an empty array
-//         let users = JSON.parse(localStorage.getItem("users")) || [];
-//         // Add new user to the list of users
-//         users.push(registrationData);
-//         // Save updated list of users to localStorage
-//         localStorage.setItem("users", JSON.stringify(users));
-//         // Optionally, you can redirect the user to another page after registration
-//         // window.location.href = "registration-success.html";
-//         // Display success message
-//         alert("Registration successful! Form data saved.");
-//     });
-//  const signInBtnLink = document.querySelector('.SignInBtn-link')
-//  const signUpBtnLink = document.querySelector('.SignUpBtn-link')
-//  const wrapper = document.querySelector('.wrapper')
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  sendEmailVerification,
+  updateProfile,
+  signInWithEmailAndPassword,
+  signOut,
+} from "https://www.gstatic.com/firebasejs/10.12.3/firebase-auth.js";
+import {
+  getFirestore,
+  addDoc,
+  collection,
+  getDocs,
+  doc,
+  getDoc,
+} from "https://www.gstatic.com/firebasejs/10.12.3/firebase-firestore.js";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
-//  signUpBtnLink.addEventListener('click',()=>{
-//     wrapper.classList.toggle('active');
-//  })
-//  signInBtnLink.addEventListener('click',()=>{
-//     wrapper.classList.toggle('active');
-//  })
-// function kiemtra() {
-//   var u = document.login.u.value;
-//   if ((u = false)) {
-//     document.getElementById("remember").innerHTML =
-//       "you need to sacrified your self";
-//     return false;
-//   } else {
-//     document.getElementById("remember").innerHTML = "you are a good person";
-//   }
-// }
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyBKwB892MCbskiRjuPf1Hbp4G9cAOUjuco",
+  authDomain: "banrauxanh-9f4a2.firebaseapp.com",
+  projectId: "banrauxanh-9f4a2",
+  storageBucket: "banrauxanh-9f4a2.appspot.com",
+  messagingSenderId: "257784397255",
+  appId: "1:257784397255:web:9e5d8dc0f9bf514fef2de2",
+  measurementId: "G-PBDFBNSS3Q",
+};
 
-// const email = document.addEventListener('email')
-// console.log("email:",email)
-// const password = document.addEventListener('password')
-// console.log("password:",password)
-// const username = document.addEventListener('username')
-// console.log("username:",username)
-// var button = document.getElementById("btnRegister");
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 
-// button.addEventListener("click", function () {
-//   document.location.href = "/index.html";
-// });
-// const button = document.getElementById("btnRegister");
+const auth = getAuth(app);
 
-// button.addEventListener("click", function () {
-//   window.location.href = "/index.html";
-// });
+const email = document.getElementById("email");
+const password = document.getElementById("password");
+const username = document.getElementById("username");
+
+const btnRegister = document.getElementById("btnRegister");
+
+if (btnRegister) {
+  btnRegister.addEventListener("click", () => {
+    createUserWithEmailAndPassword(auth, email.value, password.value)
+      .then(async (userCredential) => {
+        const user = userCredential.user;
+        console.log(user);
+        await sendEmailVerification(user);
+        await updateProfile(auth.currentUser, {
+          displayName: username.value,
+        });
+        await signOut(auth);
+        alert("Please verify your email");
+        location.href = "./login.html";
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorCode, errorMessage);
+        alert(errorCode);
+      });
+  });
+}
