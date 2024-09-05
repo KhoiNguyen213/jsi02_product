@@ -292,10 +292,10 @@ width: 40%;
     cursor: pointer;
 }
 
-.footer {
-    /* position: relative; */
-    /* margin-top: 90%; */
-}
+/* .footer {
+    position: relative;
+    margin-top: 90%;
+} */
 
 body>div.footer {
     -webkit-text-size-adjust: 100%;

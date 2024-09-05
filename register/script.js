@@ -51,8 +51,8 @@
 // button.addEventListener("click", function () {
 //   document.location.href = "/index.html";
 // });
-const button = document.getElementById("button");
+// const button = document.getElementById("btnRegister");
 
-divElement.addEventListener("click", function () {
-  window.location.href = "https://www.example.com";
-});
+// button.addEventListener("click", function () {
+//   window.location.href = "/index.html";
+// });
