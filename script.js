@@ -1,4 +1,4 @@
-const divElement = document.querySelectorAll(".card"); // Replace 'div' with the ID or class of your actual div element
+// const divElement = document.querySelectorAll(".card"); // Replace 'div' with the ID or class of your actual div element
 
 const dropdown = document.querySelector(".dropdown");
 
@@ -156,7 +156,6 @@ const password = document.getElementById("password");
 const username = document.getElementById("username");
 
 const btnRegister = document.getElementById("btnRegister");
-console.log("🚀 ~ btnRegister:", btnRegister)
 
 if (btnRegister) {
   btnRegister.addEventListener("click", () => {
